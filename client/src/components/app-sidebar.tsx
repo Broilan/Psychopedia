@@ -62,17 +62,25 @@ const contentItems = [
       { title: "History", url: "#history" },
       { title: "Theories", url: "#theories" },
     ],
-    icon: Home,
+    image: false,
+    table: false,
+    graph: false,
   },
+
   {
     title: "Types of Learning",
     url: "#",
-    icon: Inbox,
+    subsections: [],
+    image: false,
+    graph: false,
   },
+
   {
     title: "Applications",
     url: "#",
-    icon: Calendar,
+    subsections: [],
+    image: false,
+    graph: false,
   },
 ];
 
@@ -137,7 +145,6 @@ export function AppSidebar() {
               {contentItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton onClick={() => toggleSection(item.title)}>
-                    <item.icon />
                     <span>{item.title}</span>
                     {/* Chevron Up/Down */}
                     {item.subsections ? (

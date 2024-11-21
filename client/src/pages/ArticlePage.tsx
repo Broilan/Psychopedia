@@ -1,8 +1,29 @@
 import React from "react";
 import { SidebarProvider } from "../components/ui/sidebar";
+import { useToast } from "../hooks/use-toast"
 import { AppSidebar } from "../components/app-sidebar";
+import { Pencil, MessageCircle, Star, CircleAlert } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { Textarea } from "@/components/ui/textarea"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 export default function ArticlePage() {
+    const { toast } = useToast()
   const articleData = {
     title: "The Psychology of Learning",
     intro: `Learning is a fundamental cognitive process that enables humans and animals to adapt to their environments. It involves acquiring, storing, and applying information.`,
@@ -45,9 +66,81 @@ export default function ArticlePage() {
       <div className="col-span-6 px-6 py-8">
         <article className="prose max-w-none">
           {/* Title */}
-          <h1 className="text-4xl font-bold mb-6 border-b-[1px] border-b-gray-300">
+          <h1 className="text-4xl font-bold border-b-[1px] border-b-gray-300">
             {articleData.title}
           </h1>
+          <div className="flex justify-end gap-2 border-b-[1px] p-[3px] border-b-gray-300">
+            
+
+            <Dialog>
+              <DialogTrigger>            
+                <MessageCircle 
+                    strokeWidth={1} 
+                    className="w-[1.2rem]"
+                />
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle className="flex align-center text-center">
+                    Leave a comment 
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger>                    
+                          <CircleAlert 
+                            strokeWidth={1} 
+                            className="h-4 w-4 ml-2"
+                          />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Vulgarity will <br /> not be tolerated.</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </DialogTitle>
+                  <DialogDescription>
+                    <Textarea />
+                  </DialogDescription>
+                </DialogHeader>
+                  <Button variant="secondary" size="lg">Post comment</Button>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog>
+                  <DialogTrigger asChild>
+                    <Pencil strokeWidth={1} className="w-[1.2rem] hover:cursor-pointer" />
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px]">
+                    <DialogHeader>
+                      <DialogTitle>Edit page</DialogTitle>
+                      <DialogDescription>
+                        You may suggest edits here, but they will need to be approved by an admin.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="grid gap-4 py-4">
+                      <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="name" className="text-right">
+                          Name
+                        </Label>
+                        <Input id="name" value="Pedro Duarte" className="col-span-3" />
+                      </div>
+                      <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="username" className="text-right">
+                          Username
+                        </Label>
+                        <Input id="username" value="@peduarte" className="col-span-3" />
+                      </div>
+                    </div>
+                      <Button variant="secondary">Save changes</Button>
+                  </DialogContent>
+                </Dialog>
+
+            <Star 
+            strokeWidth={1} 
+            className="w-[1.2rem] hover:cursor-pointer"  
+            onClick={() => toast({description: "Page saved to favorites."})} 
+            />
+
+          </div>
 
           {/* Introduction */}
           <p className="text-lg text-gray-700 mb-8">{articleData.intro}</p>
