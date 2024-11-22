@@ -5,8 +5,9 @@ import { ArticleContent } from "@/components";
 import { seedArticleData, seedArticleData2, seedArticleData3, seedArticleData4 } from "../lib/seed";
 
 export function ArticlePage() {
+  const arr = [seedArticleData, seedArticleData2, seedArticleData3, seedArticleData4];
 
-  const contents = seedArticleData2.content.sections.map((section) => ({
+  const contents = arr[3].content.sections.map((section) => ({
     title: section.title,
     url: `#${section.title.replace(/\s+/g, "-").toLowerCase()}`,
     subsections: section.subsections?.map((sub) => ({
@@ -29,7 +30,7 @@ export function ArticlePage() {
 
       {/* Article Column */}
       <div className="col-span-6 px-6 py-8">
-        <ArticleContent articleData={seedArticleData2} />
+        <ArticleContent articleData={arr[3]} />
       </div>
 
       {/* Empty Column */}
