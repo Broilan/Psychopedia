@@ -1,4 +1,3 @@
-import React from "react";
 import { Pencil, MessageCircle, Star, CircleAlert } from "lucide-react";
 import {
   Dialog,
@@ -7,15 +6,13 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import {
+  Button, 
+  Textarea,
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+  TooltipTrigger
+} from "@/components";
 
 export function ArticleContent({ articleData }: { articleData: any }) {
   return (
@@ -96,7 +93,7 @@ export function ArticleContent({ articleData }: { articleData: any }) {
       <p className="text-lg text-gray-700 mb-8">{articleData.content.introduction}</p>
 
       {/* Sections */}
-      {articleData.content.sections.map((section, index) => (
+      {articleData.content.sections.map((section: any, index: number) => (
         <section key={index} className="mb-10">
           {/* Section Heading */}
           <h2 className="text-2xl font-semibold mb-4 border-b-[1px] border-b-gray-300">
@@ -108,7 +105,7 @@ export function ArticleContent({ articleData }: { articleData: any }) {
           {/* Media */}
           {section.media && (
             <div className="mb-6">
-              {section.media.map((media: Media, mediaIndex: number) => (
+              {section.media.map((media: any, mediaIndex: number) => (
                 <figure key={mediaIndex} className="mb-4">
                   {media.type === "image" && (
                     <img
@@ -132,7 +129,7 @@ export function ArticleContent({ articleData }: { articleData: any }) {
           {/* Subsections */}
           {section.subsections && (
             <div className="ml-6">
-              {section.subsections.map((subsection, subIndex) => (
+              {section.subsections.map((subsection: any, subIndex: any) => (
                 <div key={subIndex} className="mb-4">
                   <h3 className="text-xl font-medium mb-2">
                     {subsection.title}
@@ -151,7 +148,7 @@ export function ArticleContent({ articleData }: { articleData: any }) {
       <section id="references" className="mt-8">
         <h2 className="text-xl font-semibold mb-4">References</h2>
         <ul className="list-disc list-inside">
-          {articleData.references.map((ref, index) => (
+          {articleData.references.map((ref: any, index: any) => (
             <li key={index} className="text-sm text-gray-700">
               <strong>{ref.title}</strong>{" "}
               {ref.author && <span>- {ref.author}</span>}{" "}

@@ -1,4 +1,3 @@
-import React from "react";
 import googlePlayBadge from "../../assets/GooglePlay.png";
 import AppleStoreBadge from "../../assets/AppleStore.webp";
 import NoeticaLogo from "../../assets/Noetica.webp";
@@ -6,7 +5,7 @@ import cognimetricsLogo from "../../assets/cognimetrics.png";
 import CognitiveTestingLogo from "../../assets/CognitiveTesting.jpg";
 import PsychometricLogo from "../../assets/Psychometric.webp";
 
-const Footer: React.FC = () => {
+export function HomeFooter() {
   return (
     <footer className="bg-gray-100 py-8 border-gray-400 border-t-2 w-full overflow-x-hidden">
       <div className="container mx-auto px-4">
@@ -86,5 +85,3 @@ const Footer: React.FC = () => {
     </footer>
   );
 };
-
-export default Footer;

@@ -1,9 +1,7 @@
-import React from "react";
 import brain from "../assets/brain.jpg";
-import SearchBar from "../components/ui/SearchBar";
-import HomeFooter from "../components/ui/HomeFooter";
+import {SearchBar, HomeFooter} from "@/components";
 
-const Homepage: React.FC = () => {
+export function Homepage() {
   return (
     <div className="min-h-screen flex flex-col items-center bg-gray-100">
       {/* Centered Globe and Categories */}
@@ -54,5 +52,3 @@ const Homepage: React.FC = () => {
     </div>
   );
 };
-
-export default Homepage;

@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Homepage from './pages/Homepage'
-import ArticlePage from './pages/ArticlePage'
+import {Homepage, ArticlePage, AboutPage} from './pages'
 import { Toaster } from "./components/ui/toaster";
 
 export default function App() {
@@ -11,6 +10,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/article" element={<ArticlePage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </Router>
 

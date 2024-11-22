@@ -1,7 +1,7 @@
 import React from "react";
 import { HiMiniMagnifyingGlass } from "react-icons/hi2";
 
-const SearchBar: React.FC = () => {
+export function SearchBar() {
   const [query, setQuery] = React.useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -33,5 +33,3 @@ const SearchBar: React.FC = () => {
     </form>
   );
 };
-
-export default SearchBar;

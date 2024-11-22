@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Calendar, Home, Inbox, Search, Settings, ChevronUp, ChevronDown } from "lucide-react";
 
 import {
@@ -10,7 +10,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar";
+} from "@/components";
 
 // Menu items.
 const menuItems = [
@@ -69,11 +69,11 @@ type ContentItem = {
   graph?: boolean;
 };
 
-type AppSidebarProps = {
+type LeftBarProps = {
   contents: ContentItem[];
 };
 
-export function AppSidebar({ contents }: AppSidebarProps) {
+export function LeftBar({ contents }: LeftBarProps) {
   // State to track expanded items
   const [expandedSections, setExpandedSections] = useState<{ [key: string]: boolean }>({});
 
