@@ -52,39 +52,28 @@ const contributeItems = [
     url: "#",
     icon: Inbox,
   },
-];
-
-const contentItems = [
   {
-    title: "Introduction",
+    title: "Create an article",
     url: "#",
-    subsections: [
-      { title: "History", url: "#history" },
-      { title: "Theories", url: "#theories" },
-    ],
-    image: false,
-    table: false,
-    graph: false,
-  },
-
-  {
-    title: "Types of Learning",
-    url: "#",
-    subsections: [],
-    image: false,
-    graph: false,
-  },
-
-  {
-    title: "Applications",
-    url: "#",
-    subsections: [],
-    image: false,
-    graph: false,
+    icon: Calendar,
   },
 ];
 
-export function AppSidebar() {
+// Define the type for content items
+type ContentItem = {
+  title: string;
+  url: string;
+  subsections?: { title: string; url: string }[];
+  image?: boolean;
+  table?: boolean;
+  graph?: boolean;
+};
+
+type AppSidebarProps = {
+  contents: ContentItem[];
+};
+
+export function AppSidebar({ contents }: AppSidebarProps) {
   // State to track expanded items
   const [expandedSections, setExpandedSections] = useState<{ [key: string]: boolean }>({});
 
@@ -142,12 +131,12 @@ export function AppSidebar() {
           <SidebarGroupLabel>Contents</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {contentItems.map((item) => (
+              {contents.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton onClick={() => toggleSection(item.title)}>
                     <span>{item.title}</span>
                     {/* Chevron Up/Down */}
-                    {item.subsections ? (
+                    {item.subsections?.length ?? 0 > 0 ? (
                       expandedSections[item.title] ? (
                         <ChevronUp className="ml-auto w-4 h-4 text-gray-500" />
                       ) : (
@@ -172,6 +161,16 @@ export function AppSidebar() {
                   )}
                 </SidebarMenuItem>
               ))}
+
+              {/* References */}
+              <SidebarMenuItem>
+                <SidebarMenuButton>
+                  <a href="#references">
+                    <span>References</span>
+                  </a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

@@ -108,7 +108,7 @@ export function ArticleContent({ articleData }: { articleData: any }) {
           {/* Media */}
           {section.media && (
             <div className="mb-6">
-              {section.media.map((media, mediaIndex) => (
+              {section.media.map((media: Media, mediaIndex: number) => (
                 <figure key={mediaIndex} className="mb-4">
                   {media.type === "image" && (
                     <img
@@ -148,7 +148,7 @@ export function ArticleContent({ articleData }: { articleData: any }) {
       ))}
 
       {/* References */}
-      <section className="mt-8">
+      <section id="references" className="mt-8">
         <h2 className="text-xl font-semibold mb-4">References</h2>
         <ul className="list-disc list-inside">
           {articleData.references.map((ref, index) => (
