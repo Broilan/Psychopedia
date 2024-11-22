@@ -1,5 +1,5 @@
 import React from "react";
-import { HiMiniMagnifyingGlass } from "react-icons/hi2";
+import { Search } from "lucide-react";
 
 export function SearchBar() {
   const [query, setQuery] = React.useState("");
@@ -28,7 +28,7 @@ export function SearchBar() {
         type="submit"
         className="p-2 text-white bg-blue-500 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
       >
-        <HiMiniMagnifyingGlass />
+        <Search strokeWidth={1.5} />
       </button>
     </form>
   );

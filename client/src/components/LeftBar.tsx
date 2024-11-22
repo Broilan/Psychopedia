@@ -16,27 +16,27 @@ import {
 const menuItems = [
   {
     title: "Home",
-    url: "#",
+    url: "/",
     icon: Home,
   },
   {
     title: "Contact",
-    url: "#",
+    url: "/contact",
     icon: Inbox,
   },
   {
     title: "Help",
-    url: "#",
+    url: "/help",
     icon: Calendar,
   },
   {
     title: "About",
-    url: "#",
+    url: "/about",
     icon: Search,
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/settings",
     icon: Settings,
   },
 ];
