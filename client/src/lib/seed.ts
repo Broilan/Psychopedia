@@ -71,7 +71,7 @@ type Revision = {
     changes: string; // Description of the changes made
 };
 
-export const seedArticleData : WikiArticle = {
+const seedArticleData : WikiArticle = {
     id: "12345",
     title: "Photosynthesis",
     urlSlug: "photosynthesis",
@@ -195,3 +195,278 @@ export const seedArticleData : WikiArticle = {
     created: "2024-11-10T14:00:00Z",
     status: "published"
 };
+
+const seedArticleData2: WikiArticle = {
+    id: "67890",
+    title: "Quantum Mechanics",
+    urlSlug: "quantum-mechanics",
+    summary: "Quantum mechanics is a fundamental theory in physics describing the properties of nature on an atomic scale.",
+    categories: ["Physics", "Science"],
+    tags: ["quantum", "particles", "wave-function"],
+    content: {
+        introduction: "Quantum mechanics is the branch of physics that deals with the behavior of matter and energy at the smallest scales.",
+        sections: [
+            {
+                title: "History and Development",
+                content: "Quantum mechanics emerged in the early 20th century, revolutionizing our understanding of atomic and subatomic processes.",
+                media: [
+                    {
+                        id: "img1",
+                        type: "image",
+                        caption: "Key Figures in Quantum Mechanics",
+                        source: "/images/quantum-pioneers.png",
+                        dimensions: { width: 700, height: 500 },
+                        attribution: "Physics Archive",
+                    },
+                ],
+            },
+            {
+                title: "Key Principles",
+                content: "Quantum mechanics is based on principles such as wave-particle duality, superposition, and uncertainty.",
+                media: [
+                    {
+                        id: "chart1",
+                        type: "chart",
+                        caption: "Wave-Particle Duality",
+                        data: { x: [0, 1, 2], y: [10, 20, 15] }, // Example chart data
+                    },
+                ],
+            },
+        ],
+    },
+    infobox: {
+        title: "Quantum Mechanics Overview",
+        rows: [
+            { label: "Discipline", value: "Physics" },
+            { label: "Key Figures", value: "Planck, Einstein, Schrödinger" },
+        ],
+    },
+    references: [
+        {
+            title: "Introduction to Quantum Mechanics",
+            author: "David J. Griffiths",
+            publicationDate: "1995-08-25",
+            type: "book",
+        },
+        {
+            title: "Quantum Physics and Beyond",
+            url: "https://example.com/quantum",
+            type: "website",
+        },
+    ],
+    media: [
+        {
+            id: "img1",
+            type: "image",
+            caption: "Key Figures in Quantum Mechanics",
+            source: "/images/quantum-pioneers.png",
+            dimensions: { width: 700, height: 500 },
+            attribution: "Physics Archive",
+        },
+    ],
+    contributors: [
+        {
+            name: "Alice Quantum",
+            userId: "aquanta",
+            contributions: ["added 'Key Principles' section"],
+        },
+    ],
+    revisions: [
+        {
+            timestamp: "2024-11-21T12:30:00Z",
+            userId: "aquanta",
+            changes: "Updated introduction and added contributors.",
+        },
+    ],
+    lastUpdated: "2024-11-21T12:45:00Z",
+    created: "2024-11-01T09:00:00Z",
+    status: "published",
+};
+
+
+
+const seedArticleData3: WikiArticle = {
+    id: "112233",
+    title: "Ancient Rome",
+    urlSlug: "ancient-rome",
+    summary: "Ancient Rome was one of the greatest civilizations in history, influencing law, culture, and governance.",
+    categories: ["History", "Civilization"],
+    tags: ["Rome", "history", "empire"],
+    content: {
+        introduction: "Ancient Rome flourished for centuries, leaving an enduring legacy on the modern world.",
+        sections: [
+            {
+                title: "Foundation and Early Republic",
+                content: "Rome was founded in 753 BCE and grew from a small city-state to a powerful republic.",
+                media: [
+                    {
+                        id: "img2",
+                        type: "image",
+                        caption: "Roman Forum",
+                        source: "/images/roman-forum.png",
+                        dimensions: { width: 700, height: 400 },
+                        attribution: "Historical Archives",
+                    },
+                ],
+            },
+            {
+                title: "Rise of the Empire",
+                content: "Under Augustus, Rome transitioned from a republic to an empire, dominating the Mediterranean.",
+                subsections: [
+                    {
+                        title: "Key Emperors",
+                        content: "Notable emperors include Augustus, Nero, and Constantine.",
+                        media: [
+                            {
+                                id: "table1",
+                                type: "table",
+                                caption: "Key Roman Emperors",
+                                data: [
+                                    ["Name", "Reign", "Achievements"],
+                                    ["Augustus", "27 BCE - 14 CE", "Established the empire"],
+                                    ["Constantine", "306 CE - 337 CE", "Christianized Rome"],
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    infobox: {
+        title: "Ancient Rome Overview",
+        rows: [
+            { label: "Founded", value: "753 BCE" },
+            { label: "Language", value: "Latin" },
+        ],
+    },
+    references: [
+        {
+            title: "The History of Rome",
+            author: "Livy",
+            type: "book",
+        },
+        {
+            title: "Rome: Engineering an Empire",
+            url: "https://example.com/rome-empire",
+            type: "website",
+        },
+    ],
+    media: [
+        {
+            id: "img2",
+            type: "image",
+            caption: "Roman Forum",
+            source: "/images/roman-forum.png",
+            dimensions: { width: 700, height: 400 },
+            attribution: "Historical Archives",
+        },
+    ],
+    contributors: [
+        {
+            name: "Marcus Historicus",
+            userId: "mhistory",
+            contributions: ["added 'Rise of the Empire' section"],
+        },
+    ],
+    revisions: [
+        {
+            timestamp: "2024-11-21T14:00:00Z",
+            userId: "mhistory",
+            changes: "Added media to 'Rise of the Empire' section.",
+        },
+    ],
+    lastUpdated: "2024-11-21T14:30:00Z",
+    created: "2024-11-05T15:00:00Z",
+    status: "published",
+};
+
+
+const seedArticleData4: WikiArticle = {
+    id: "445566",
+    title: "Neural Networks",
+    urlSlug: "neural-networks",
+    summary: "Neural networks are algorithms inspired by the structure of the human brain, used in AI and machine learning.",
+    categories: ["Artificial Intelligence", "Machine Learning"],
+    tags: ["AI", "neural-networks", "deep-learning"],
+    content: {
+        introduction: "Neural networks are the backbone of modern artificial intelligence applications, from image recognition to language translation.",
+        sections: [
+            {
+                title: "Structure and Function",
+                content: "Neural networks consist of layers of nodes, with each node mimicking a biological neuron.",
+                media: [
+                    {
+                        id: "img3",
+                        type: "image",
+                        caption: "A Neural Network Diagram",
+                        source: "/images/neural-network.png",
+                        dimensions: { width: 800, height: 600 },
+                        attribution: "AI Labs",
+                    },
+                ],
+            },
+            {
+                title: "Training Neural Networks",
+                content: "Training involves feeding data through the network and adjusting weights using backpropagation.",
+                media: [
+                    {
+                        id: "chart3",
+                        type: "chart",
+                        caption: "Training Loss over Time",
+                        data: { epochs: [1, 2, 3, 4], loss: [0.9, 0.5, 0.3, 0.2] }, // Example chart data
+                    },
+                ],
+            },
+        ],
+    },
+    media: [
+        {
+            id: "img3",
+            type: "image",
+            caption: "A Neural Network Diagram",
+            source: "/images/neural-network.png",
+            dimensions: { width: 800, height: 600 },
+            attribution: "AI Labs",
+        },
+        {
+            id: "chart3",
+            type: "chart",
+            caption: "Training Loss over Time",
+            data: { epochs: [1, 2, 3, 4], loss: [0.9, 0.5, 0.3, 0.2] }, // Example chart data
+        },
+    ],
+    references: [
+        {
+            title: "Deep Learning",
+            author: "Ian Goodfellow",
+            type: "book",
+        },
+        {
+            title: "Neural Networks Simplified",
+            url: "https://example.com/neural-networks",
+            type: "website",
+        },
+    ],
+    contributors: [
+        {
+            name: "AI Enthusiast",
+            userId: "aienergy",
+            contributions: ["added 'Structure and Function' section"],
+        },
+    ],
+    revisions: [
+        {
+            timestamp: "2024-11-21T16:00:00Z",
+            userId: "aienergy",
+            changes: "Updated Neural Network Diagram media.",
+        },
+    ],
+    lastUpdated: "2024-11-21T16:15:00Z",
+    created: "2024-11-10T12:00:00Z",
+    status: "published",
+};
+
+
+
+export { seedArticleData, seedArticleData2, seedArticleData3, seedArticleData4 };
