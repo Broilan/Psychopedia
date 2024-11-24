@@ -7,9 +7,9 @@ import PsychometricLogo from "../../assets/Psychometric.webp";
 
 export function HomeFooter() {
   return (
-    <footer className="bg-gray-100 py-8 border-gray-400 border-t-2 w-full overflow-x-hidden">
-      <div className="container mx-auto px-4">
-        {/* Top Section */}
+    <footer className="bg-gray-100 border-t-2 border-gray-400 w-full overflow-x-hidden">
+      {/* Main Footer */}
+      <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Donate and Download Section */}
           <div className="flex flex-col items-start">
@@ -43,35 +43,43 @@ export function HomeFooter() {
           {/* Links Section */}
           <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: "Psychometric",
+              {
+                name: "Psychometric",
                 description: "NPM package for Psychometricians",
-                image: PsychometricLogo
-            },
-              { name: "Cognimetrics", 
-                description: "Our official testing site",
-                image: cognimetricsLogo 
-            },
-              { name: "Noetica (Discord)", 
-                description: "Our official Discord Server",
-                image: NoeticaLogo 
-            },
-              { name: "Noetica (App)", 
-                description: "Collection of testing paradigms",
-                image: NoeticaLogo 
+                image: PsychometricLogo,
               },
-              { name: "Cognitive Testing", 
+              {
+                name: "Cognimetrics",
+                description: "Our official testing site",
+                image: cognimetricsLogo,
+              },
+              {
+                name: "Noetica (Discord)",
+                description: "Our official Discord Server",
+                image: NoeticaLogo,
+              },
+              {
+                name: "Noetica (App)",
+                description: "Collection of testing paradigms",
+                image: NoeticaLogo,
+              },
+              {
+                name: "Cognitive Testing",
                 description: "Our official Reddit",
-                image: CognitiveTestingLogo
-
-            },
+                image: CognitiveTestingLogo,
+              },
             ].map((project, index) => (
               <div key={index} className="flex items-center space-x-4">
                 <div className="w-16 h-16 text-white">
-                    {project.image ? (
-                        <img src={project.image} alt={project.name} className="rounded-full shadow-xl" />
-                    ) : (
-                        project.name[0]
-                    )}
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      className="rounded-full shadow-xl"
+                    />
+                  ) : (
+                    project.name[0]
+                  )}
                 </div>
                 <div>
                   <h3 className="text-blue-600 font-semibold">{project.name}</h3>
@@ -82,6 +90,27 @@ export function HomeFooter() {
           </div>
         </div>
       </div>
+
+      {/* Smaller Footer Inside */}
+      <div className="bg-gray-200 py-4 border-t border-gray-300">
+        <div className="container mx-auto px-4 flex flex-wrap justify-center text-sm text-gray-600 space-x-4">
+          <a href="/about" className="hover:text-blue-600">
+            About
+          </a>
+          <a href="/contact" className="hover:text-blue-600">
+            Contact
+          </a>
+          <a href="/privacy" className="hover:text-blue-600">
+            Privacy Policy
+          </a>
+          <a href="/terms" className="hover:text-blue-600">
+            Terms of Service
+          </a>
+          <a href="/help" className="hover:text-blue-600">
+            Help
+          </a>
+        </div>
+      </div>
     </footer>
   );
-};
+}
